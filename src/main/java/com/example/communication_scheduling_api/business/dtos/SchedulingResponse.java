@@ -6,7 +6,8 @@ import lombok.NonNull;
 
 import java.time.LocalDateTime;
 
-public record SchedulingResponse(String message,
+public record SchedulingResponse(Long id,
+                                 String message,
                                  String recipientEmail,
                                  String recipientPhone,
                                  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy HH:mm:ss")
