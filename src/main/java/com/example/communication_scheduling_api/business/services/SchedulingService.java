@@ -18,5 +18,9 @@ public class SchedulingService {
         return mapper.toResponseDto(repository.save(mapper.toEntity(requestDto)));
     }
 
+    public SchedulingResponse getSchedulingById(Long id){
+        return mapper.toResponseDto(repository.findById(id).orElseThrow());
+    }
+
 
 }

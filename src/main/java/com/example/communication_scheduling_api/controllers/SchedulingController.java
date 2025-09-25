@@ -6,10 +6,7 @@ import com.example.communication_scheduling_api.business.mappers.SchedulingMappe
 import com.example.communication_scheduling_api.business.services.SchedulingService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 @RestController
 @RequiredArgsConstructor
@@ -22,5 +19,10 @@ public class SchedulingController {
     @PostMapping
     public ResponseEntity<SchedulingResponse> createScheduling(@RequestBody SchedulingRequest requestDto){
         return ResponseEntity.ok(service.createScheduling(requestDto));
+    }
+
+    @GetMapping("/{id}")
+    ResponseEntity<SchedulingResponse> getSchedulingById(@PathVariable Long id){
+        return ResponseEntity.ok(service.getSchedulingById(id));
     }
 }
