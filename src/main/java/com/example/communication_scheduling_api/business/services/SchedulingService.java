@@ -1,8 +1,8 @@
 package com.example.communication_scheduling_api.business.services;
 
-import com.example.communication_scheduling_api.business.dtos.SchedulingRequest;
-import com.example.communication_scheduling_api.business.dtos.SchedulingResponse;
-import com.example.communication_scheduling_api.business.mappers.SchedulingMapper;
+import com.example.communication_scheduling_api.controllers.dtos.SchedulingRequest;
+import com.example.communication_scheduling_api.controllers.dtos.SchedulingResponse;
+import com.example.communication_scheduling_api.controllers.dtos.mappers.SchedulingMapper;
 import com.example.communication_scheduling_api.infrastructure.repositories.SchedulingRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
@@ -20,6 +20,11 @@ public class SchedulingService {
 
     public SchedulingResponse getSchedulingById(Long id){
         return mapper.toResponseDto(repository.findById(id).orElseThrow());
+    }
+
+    public void cancelSchedulingById(Long id){
+        repository.save(
+                mapper.toEntityCancelment(repository.findById(id).orElseThrow()));
     }
 
 

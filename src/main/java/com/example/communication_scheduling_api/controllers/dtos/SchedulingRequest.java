@@ -1,4 +1,4 @@
-package com.example.communication_scheduling_api.business.dtos;
+package com.example.communication_scheduling_api.controllers.dtos;
 
 import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.NonNull;

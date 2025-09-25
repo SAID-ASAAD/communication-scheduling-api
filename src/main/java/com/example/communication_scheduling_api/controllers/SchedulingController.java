@@ -1,8 +1,8 @@
 package com.example.communication_scheduling_api.controllers;
 
-import com.example.communication_scheduling_api.business.dtos.SchedulingRequest;
-import com.example.communication_scheduling_api.business.dtos.SchedulingResponse;
-import com.example.communication_scheduling_api.business.mappers.SchedulingMapper;
+import com.example.communication_scheduling_api.controllers.dtos.SchedulingRequest;
+import com.example.communication_scheduling_api.controllers.dtos.SchedulingResponse;
+import com.example.communication_scheduling_api.controllers.dtos.mappers.SchedulingMapper;
 import com.example.communication_scheduling_api.business.services.SchedulingService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -24,5 +24,11 @@ public class SchedulingController {
     @GetMapping("/{id}")
     ResponseEntity<SchedulingResponse> getSchedulingById(@PathVariable Long id){
         return ResponseEntity.ok(service.getSchedulingById(id));
+    }
+
+    @DeleteMapping("/{id}")
+    ResponseEntity<Void> cancelSchedulingById(@PathVariable Long id){
+        service.cancelSchedulingById(id);
+        return ResponseEntity.accepted().build();
     }
 }

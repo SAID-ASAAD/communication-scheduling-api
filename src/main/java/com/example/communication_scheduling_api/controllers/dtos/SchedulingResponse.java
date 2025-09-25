@@ -1,4 +1,4 @@
-package com.example.communication_scheduling_api.business.dtos;
+package com.example.communication_scheduling_api.controllers.dtos;
 
 import com.example.communication_scheduling_api.infrastructure.enuns.SchedulingStatus;
 import com.fasterxml.jackson.annotation.JsonFormat;
@@ -14,5 +14,7 @@ public record SchedulingResponse(Long id,
                                  LocalDateTime deliveryDateTime,
                                  @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy HH:mm:ss")
                                  LocalDateTime schedulingDateTime,
+                                 @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "dd-MM-yyyy HH:mm:ss")
+                                 LocalDateTime modificationDateTime,
                                  SchedulingStatus schedulingStatus) {
 }
