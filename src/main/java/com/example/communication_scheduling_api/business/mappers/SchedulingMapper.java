@@ -11,5 +11,5 @@ import static org.mapstruct.MappingConstants.ComponentModel.SPRING;
 public interface SchedulingMapper {
 
     Scheduling toEntity(SchedulingRequest requestDto);
-    SchedulingResponse toResponse(Scheduling schedulingEntity);
+    SchedulingResponse toResponseDto(Scheduling schedulingEntity);
 }
