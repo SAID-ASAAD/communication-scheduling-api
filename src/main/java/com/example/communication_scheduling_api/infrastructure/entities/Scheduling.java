@@ -30,6 +30,8 @@ public class Scheduling {
     private LocalDateTime deliveryDateTime;
     @Column(name = "scheduling_date_time")
     private LocalDateTime schedulingDateTime;
+    @Column(name = "modification_date_time")
+    private LocalDateTime modificationDateTime;
     @Enumerated(EnumType.STRING)
     @Column(name = "scheduling_status")
     private SchedulingStatus schedulingStatus;
