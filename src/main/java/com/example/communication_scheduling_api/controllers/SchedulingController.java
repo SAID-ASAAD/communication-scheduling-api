@@ -2,7 +2,6 @@ package com.example.communication_scheduling_api.controllers;
 
 import com.example.communication_scheduling_api.controllers.dtos.SchedulingRequest;
 import com.example.communication_scheduling_api.controllers.dtos.SchedulingResponse;
-import com.example.communication_scheduling_api.controllers.dtos.mappers.SchedulingMapper;
 import com.example.communication_scheduling_api.business.services.SchedulingService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.http.ResponseEntity;
@@ -14,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 public class SchedulingController {
 
     private final SchedulingService service;
-    private final SchedulingMapper mapper;
+
 
     @PostMapping
     public ResponseEntity<SchedulingResponse> createScheduling(@RequestBody SchedulingRequest requestDto){
