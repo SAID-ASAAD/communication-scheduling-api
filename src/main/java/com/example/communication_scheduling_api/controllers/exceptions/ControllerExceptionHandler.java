@@ -1,8 +1,8 @@
 package com.example.communication_scheduling_api.controllers.exceptions;
 
 
-import com.example.communication_scheduling_api.business.services.exceptions.ContactDataException;
-import com.example.communication_scheduling_api.business.services.exceptions.ResourceNotFoundException;
+import com.example.communication_scheduling_api.services.exceptions.ContactDataException;
+import com.example.communication_scheduling_api.services.exceptions.ResourceNotFoundException;
 import jakarta.servlet.http.HttpServletRequest;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -21,7 +21,7 @@ public class ControllerExceptionHandler {
 
 	@ExceptionHandler(ResourceNotFoundException.class)
 	public ResponseEntity<StandardError> resourceNotFound(ResourceNotFoundException e, HttpServletRequest request) {
-		String error = "Resource not found";
+        String error = "Resource not found";
 		HttpStatus status = HttpStatus.NOT_FOUND;
 		StandardError err = new StandardError(Instant.now(), status.value(), error, e.getMessage(), request.getRequestURI());
         log.error("Resource not found by the given id");
@@ -40,7 +40,7 @@ public class ControllerExceptionHandler {
     public ResponseEntity<StandardError> messageNotReadable(HttpMessageNotReadableException e, HttpServletRequest request) {
         String error = "Invalid JSON";
         HttpStatus status = HttpStatus.BAD_REQUEST;
-        StandardError err = new StandardError(Instant.now(), status.value(), error, e.getMessage(), request.getRequestURI());
+        StandardError err = new StandardError(Instant.now(), status.value(), error, "Invalid Json: missing mandatory data or wrong formatting", request.getRequestURI());
         log.error("Invalid Json: missing mandatory data or wrong formatting");
         return ResponseEntity.status(status).body(err);
     }

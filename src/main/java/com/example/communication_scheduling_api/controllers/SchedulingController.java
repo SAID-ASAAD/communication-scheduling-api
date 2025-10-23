@@ -2,7 +2,9 @@ package com.example.communication_scheduling_api.controllers;
 
 import com.example.communication_scheduling_api.controllers.dtos.SchedulingRequest;
 import com.example.communication_scheduling_api.controllers.dtos.SchedulingResponse;
-import com.example.communication_scheduling_api.business.services.SchedulingService;
+import com.example.communication_scheduling_api.services.SchedulingService;
+import io.micrometer.core.annotation.Counted;
+import io.micrometer.core.annotation.Timed;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
@@ -29,6 +31,7 @@ public class SchedulingController {
     }
 
     @GetMapping("/{id}")
+    @Timed(value = "scheduling.timed.getById")
     @Operation(description = "Endpoint responsible for find a notification schedule by id")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "200", description = "The notification schedule regarding the given id was successfully returned"),
@@ -39,6 +42,7 @@ public class SchedulingController {
     }
 
     @DeleteMapping("/{id}")
+    @Timed(value = "scheduling.timed.cancelById")
     @Operation(description = "Endpoint responsible for change the notification schedule status to CANCELED by the given id")
     @ApiResponses(value = {
             @ApiResponse(responseCode = "204", description = "Notification schedule successfully canceled"),
