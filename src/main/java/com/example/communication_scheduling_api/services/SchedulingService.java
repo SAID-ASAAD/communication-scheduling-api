@@ -1,7 +1,7 @@
-package com.example.communication_scheduling_api.business.services;
+package com.example.communication_scheduling_api.services;
 
-import com.example.communication_scheduling_api.business.services.exceptions.ContactDataException;
-import com.example.communication_scheduling_api.business.services.exceptions.ResourceNotFoundException;
+import com.example.communication_scheduling_api.services.exceptions.ContactDataException;
+import com.example.communication_scheduling_api.services.exceptions.ResourceNotFoundException;
 import com.example.communication_scheduling_api.controllers.dtos.SchedulingRequest;
 import com.example.communication_scheduling_api.controllers.dtos.SchedulingResponse;
 import com.example.communication_scheduling_api.controllers.dtos.mappers.SchedulingMapper;
