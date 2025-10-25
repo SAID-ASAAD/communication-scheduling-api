@@ -3,7 +3,6 @@ package com.example.communication_scheduling_api.controllers;
 import com.example.communication_scheduling_api.controllers.dtos.SchedulingRequest;
 import com.example.communication_scheduling_api.controllers.dtos.SchedulingResponse;
 import com.example.communication_scheduling_api.services.SchedulingService;
-import io.micrometer.core.annotation.Counted;
 import io.micrometer.core.annotation.Timed;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
