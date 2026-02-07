@@ -1,4 +1,4 @@
-package com.example.communication_scheduling_api.actuator;
+package com.example.communication_scheduling_api.observability.actuator;
 
 
 import com.example.communication_scheduling_api.infrastructure.repositories.SchedulingRepository;

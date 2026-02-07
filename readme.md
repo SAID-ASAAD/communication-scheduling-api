@@ -2,6 +2,7 @@
 
 [![Java](https://img.shields.io/badge/Java-21-blue.svg)](https://www.java.com)
 [![Spring Boot](https://img.shields.io/badge/Spring%20Boot-3-brightgreen.svg)](https://spring.io/projects/spring-boot)
+[![Maven](https://img.shields.io/badge/Maven-3.9%2B-blue.svg)](https://maven.apache.org/)
 [![Docker](https://img.shields.io/badge/Docker-supported-blue.svg)](https://www.docker.com)
 [![Actuator](https://img.shields.io/badge/Actuator-enabled-orange.svg)](https://docs.spring.io/spring-boot/docs/current/reference/html/actuator.html)
 

@@ -11,6 +11,10 @@ import static org.mapstruct.MappingConstants.ComponentModel.SPRING;
 @Mapper(componentModel = SPRING)
 public interface SchedulingMapper {
 
+    @Mapping(target = "schedulingStatus", ignore = true)
+    @Mapping(target = "schedulingDateTime", ignore = true)
+    @Mapping(target = "modificationDateTime", ignore = true)
+    @Mapping(target = "id", ignore = true)
     Scheduling toEntity(SchedulingRequest requestDto);
     SchedulingResponse toResponseDto(Scheduling schedulingEntity);
 
