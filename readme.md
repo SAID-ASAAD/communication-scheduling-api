@@ -27,7 +27,7 @@ This project is a REST API developed in Java with Spring Boot. It serves as a fo
 - **API & Documentation:** Spring Web, SpringDoc OpenAPI (Swagger UI)
 - **Testing:** JUnit 5, Mockito
 - **Containerization:** Docker, Docker Compose
-- **Observability:** Spring Boot Actuator, Micrometer
+- **Observability:** Spring Boot Actuator, Micrometer, Prometheus, Grafana
 
 ---
 
